@@ -6,7 +6,7 @@
 ### Mongo Express funcionant
 [Mongo Express](captures/bloc1-mongoexpress.png)
 
-1.2 Preguntes teòriques 
+    Preguntes teòriques 
 Prepara la resposta d’aquestes preguntes i escriu-la al fitxer practica.md. Aquestes preguntes se’t podran demanar en la validació oral. 
 1. Quina és la diferència entre docker run i docker compose up? 
 2. Per a què serveix la instrucció depends_on? Garanteix que el servei dependent estigui completament operatiu? 
@@ -15,7 +15,7 @@ Prepara la resposta d’aquestes preguntes i escriu-la al fitxer practica.md. Aq
 ## Bloc 2: init.js amb productes, clients i comandes
 ### Mongo Express funcionant
 
-2.3 Preguntes teòriques 
+    Preguntes teòriques 
 Prepara la resposta d’aquestes preguntes i escriu-la al fitxer practica.md. Aquestes preguntes se’t podran demanar en la validació oral. 
 1. Què passaria si no definíssim cap volum al docker-compose.yml? Fes la prova i documenta el resultat. 
 2. Explica la diferència entre un volum named (amb nom) i un bind mount (ruta del host). Quan convé usar cada un? 
@@ -24,10 +24,16 @@ Prepara la resposta d’aquestes preguntes i escriu-la al fitxer practica.md. Aq
 # Bloc 3: CRUD en MongoDB
 ### Mongo Express funcionant
 
-3.5 Preguntes teòriques 
+    Preguntes teòriques 
 Prepara la resposta d’aquestes preguntes i escriu-la al fitxer practica.md. Aquestes preguntes se’t podran demanar en la validació oral. 
 1. Tal com has creat la col·lecció de productes, el seu nom és únic? Justifica la resposta. 
 2. Què significa el terme “projectar” en les consultes? Explica-ho amb un exemple diferent del d’aquest enunciat. 
 3. Llista totes les funcions i operadors que hagis utilitzat en les consultes, explica el seu significat i descriu un exemple d’ús diferent dels exemples d’aquest enunciat.
 
+# Bloc 4: Consultas avançades i indexes
+### Mongo Express funcionant
 
+    Preguntes teòriques 
+Prepara la resposta d’aquestes preguntes i escriu-la al fitxer practica.md. Aquestes preguntes se’t podran demanar en la validació oral. 
+1. Quan pot ser perjudicial tenir massa índexs en una col·lecció? Explica el compromís (trade-off) entre lectura i escriptura. 
+2. Llista totes les funcions i operadors que hagis utilitzat en les consultes, explica el seu significat i descriu un exemple d’ús diferent dels exemples d’aquest enunciat.
