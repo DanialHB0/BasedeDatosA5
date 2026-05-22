@@ -6,5 +6,5 @@
 ### Mongo Express funcionant
 [Mongo Express](captures/bloc1-mongoexpress.png)
 
-## Bloc 2 "Bloc 2: init.js amb productos, clientes i comandos"
-### Mongo Express capturas con apartado botiga y sus subapartados
+## Bloc 2 "Bloc 2: init.js amb productes, clients i comandes"
+### Mongo Express funcionant
