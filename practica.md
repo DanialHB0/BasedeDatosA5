@@ -2,7 +2,7 @@
 
 ## Bloc 0
 
-## Bloc 1 Docker configurado con MongoDB
+## Bloc 1 Docker configurat amb MongoDB
 ### Mongo Express funcionant
 [Mongo Express](captures/bloc1-mongoexpress.png)
 
