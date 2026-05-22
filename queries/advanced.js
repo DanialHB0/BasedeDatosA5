@@ -79,3 +79,36 @@ db.comandes.aggregate([
   },
   { $sort: { total_gastat: -1 } }
 ]).forEach(r => printjson(r));
+
+print("=== 4.2 GESTIÓ D'ÍNDEXS ===");
+
+// 7. Índex simple al camp categoria
+db.productes.createIndex({ categoria: 1 });
+print("7. Índex simple creat: { categoria: 1 }");
+
+// 8. Índex compost (categoria, preu)
+db.productes.createIndex({ categoria: 1, preu: 1 });
+print("8. Índex compost creat: { categoria: 1, preu: 1 }");
+
+// 9. Índex de text al camp nom
+db.productes.createIndex({ nom: "text" });
+print("9. Índex de text creat al camp nom");
+
+// 10. explain() - comparar sense índex i amb índex
+print("10. explain() SENSE índex (camp valoracio):");
+const senseIndex = db.productes.find({ valoracio: { $gte: 4.0 } })
+  .explain("executionStats");
+print("nDocsExamined (sense índex): " + senseIndex.executionStats.totalDocsExamined);
+print("winningPlan stage: " + senseIndex.executionStats.executionStages.stage);
+
+db.productes.createIndex({ valoracio: 1 });
+print("Índex creat: { valoracio: 1 }");
+
+const ambIndex = db.productes.find({ valoracio: { $gte: 4.0 } })
+  .explain("executionStats");
+print("nDocsExamined (AMB índex): " + ambIndex.executionStats.totalDocsExamined);
+print("winningPlan stage: " + ambIndex.executionStats.executionStages.stage);
+
+// 11. Llista tots els índexs
+print("11. Tots els índexs de productes:");
+db.productes.getIndexes().forEach(i => printjson(i));
