@@ -47,3 +47,45 @@ db.productes.find(
 // 7. Productes per etiqueta
 print("7. Productes amb etiqueta treball:");
 db.productes.find({ etiquetes: "treball" }).forEach(p => printjson(p));
+
+print("=== 3.3 UPDATE ===");
+
+// 8. Actualitza el preu d'un producte específic amb updateOne()
+const res8 = db.productes.updateOne(
+  { nom: "Auriculars Bluetooth SoundMax" },
+  { $set: { preu: 54.99 } }
+);
+print("8. updateOne() preu - Documents modificats: " + res8.modifiedCount);
+
+// 9. Augmenta l'estoc de tots els productes d'esport en 10 unitats
+const res9 = db.productes.updateMany(
+  { categoria: "esport" },
+  { $inc: { estoc: 10 } }
+);
+print("9. updateMany() estoc +10 esport - Documents modificats: " + res9.modifiedCount);
+
+// 10. Afegeix una nova etiqueta a un producte
+const res10 = db.productes.updateOne(
+  { nom: "Portàtil UltraBook Pro 15" },
+  { $push: { etiquetes: "recomanat" } }
+);
+print("10. push etiqueta - Documents modificats: " + res10.modifiedCount);
+
+// 11. Desactiva tots els productes sense estoc
+const res11 = db.productes.updateMany(
+  { estoc: 0 },
+  { $set: { actiu: false } }
+);
+print("11. Desactivar productes sense estoc - Documents modificats: " + res11.modifiedCount);
+
+print("=== 3.4 DELETE ===");
+
+// 12. Elimina un producte pel seu nom
+const res12 = db.productes.deleteOne({ nom: "Teclat mecànic RGB ProType" });
+print("12. deleteOne() - Documents eliminats: " + res12.deletedCount);
+
+// 13. Elimina tots els productes de la categoria 'ofertes'
+const res13 = db.productes.deleteMany({ categoria: "ofertes" });
+print("13. deleteMany() ofertes - Documents eliminats: " + res13.deletedCount);
+
+print("Total productes actuals: " + db.productes.countDocuments());
